@@ -1,0 +1,26 @@
+Напишите функцию, принимающую на вход строку, 
+и возвращающую первый символ, который встречается в строке только один раз.
+
+Если это буква, то она должна быть в том регистре, в котором она встретилась в строке. 
+Например, для строки mAmaN вернуть N.
+
+Если все символы встречаются больше одного раза, вернуть пустую строку.
+
+firstNonRepeatingLetter('mAmaN') === 'N'
+firstNonRepeatingLetter('a') === 'a'
+firstNonRepeatingLetter('paPA') === ''
+firstNonRepeatingLetter('Go hang a salami, I\'m a lasagna hog!') === ','
+
+*/
+
+
+
+var str = "pradeepdavuluri";
+
+for ( var i = 0; i < str.length; i++ ){
+
+	if ( str.indexOf(str.charAt(i)) == str.last.indexOf(str.charAt(i))){
+		concole.log(str.charAt(i));
+		break;
+	}
+}

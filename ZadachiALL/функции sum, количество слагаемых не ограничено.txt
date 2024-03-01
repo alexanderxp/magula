@@ -1,0 +1,22 @@
+Напишите код функции sum, количество слагаемых не ограничено
+sum(1)(2)              // 3
+sum(1)(2)(3)           // 6 
+sum(2)(2)(2)(2)(2)     // 10
+
+*/
+
+ 
+
+function sum(x) {
+
+  let currSumma = x;
+
+  	function f(y) {
+   	 currSumma += y;
+   	 return f;
+ 	 }
+  	f.toString = function() {
+  	  return currSumma;
+ 	 };
+  return f;
+}

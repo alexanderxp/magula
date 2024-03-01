@@ -1,0 +1,57 @@
+класс Worker будет работать так:
+let worker = new Worker('Имя', 'Фамилия', 10, 31);
+console.log(worker.getRate());        //выведет 10
+console.log(worker.getDays());        //выведет 31
+console.log(worker.getSalary());      //выведет 310 - то есть 10*31
+worker.setRate(20);                   //увеличим ставку
+worker.setDays(10);                   //уменьшим дни
+console.log(worker.getSalary());      //выведет 200 - то есть 20*10
+
+класс PreciousWorker наследует у Worker будет работать так:
+let preciousWorker = new PreciousWorker('Имя', 'Фамилия', 10, 31, 5);
+console.log(worker.getRate());         //выведет 10
+console.log(worker.getDays());         //выведет 31
+console.log(worker.getSalary());       //выведет 1550 - то есть 10*31*5
+worker.setRate(20);                    //увеличим ставку
+worker.setDays(10);                    //уменьшим дни
+console.log(worker.getSalary());       //выведет 1000 - то есть 20*10*5
+*/
+
+
+
+
+class Worker {
+	constructor(name, surname, rate, days) {
+		this.name = name;
+		this.surname = surname;
+		this.rate = rate;
+		this.days = days;
+	}
+
+	getSalary() {
+		return this.rate * this.days;
+	}
+
+  getName() {
+		return this.name;
+	}
+	getSurname() {
+		return this.surname;
+	}
+	getRate () {
+		return this.rate;
+	};
+	setRate(newRate) {
+		this.rate = newRate;
+  }
+
+  getDays(){
+		return this.days;
+	}
+	setDays(newDays) {
+		this.days = newDays;
+	}
+	getSalary(){
+		return days * rate;
+	}
+}

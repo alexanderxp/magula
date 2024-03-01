@@ -1,0 +1,16 @@
+Ќаписать ф-цию, котора€ будет может вызыватьс€ неограниченное
+ количество раз в виде multipleSum(1)(2)(3)(4)(5)() // 15 
+ */
+ 
+
+	function sum(a) {
+		var currentSum = a;
+			f.toString = function() {
+				return currentSum;
+			};
+		function f(b) {
+			currentSum += b;
+				return f;
+		}
+		return f;
+	}

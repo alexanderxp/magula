@@ -1,0 +1,34 @@
+Число является палиндромом, если оно равно числу с цифрами в обратном порядке.
+Например, 5, 44, 171, 4884 - палиндромы, а 43, 194, 4773 - не палиндромы.
+Напишите метод palindrome_chain_length, который принимает положительное число и возвращает
+количество специальных шагов, необходимых для получения палиндрома.
+Специальный шаг: «поменять местами цифры и добавить к исходному номеру».
+Если полученное число не является палиндромом, повторите процедуру.
+с суммой до тех пор, пока полученное число не станет палиндромом.
+Если введенное число уже является палиндромом, количество шагов равно 0. 
+
+Number is a palindrome if it is equal to the number with digits in reversed order. 
+For example, 5, 44, 171, 4884 are palindromes and 43, 194, 4773 are not palindromes.
+Write a method palindrome_chain_length which takes a positive number and returns 
+the number of special steps needed to obtain a palindrome. 
+The special step is: "reverse the digits, and add to the original number". 
+If the resulting number is not a palindrome, repeat the procedure 
+with the sum until the resulting number is a palindrome.
+If the input number is already a palindrome, the number of steps is 0.
+
+Input will always be a positive integer.
+For example, start with 87:
+87 + 78 = 165; 165 + 561 = 726; 726 + 627 = 1353; 1353 + 3531 = 4884
+4884 is a palindrome and we needed 4 steps to obtain it, so palindrome_chain_length(87) == 4
+*/
+
+
+
+	function isPalindrome (array) {
+		for (i = 0; i < array.length; i++) {
+			if (array[i] !== array[array.length - i - 1]) {
+			return false;
+			}
+		}
+		return true;
+	}

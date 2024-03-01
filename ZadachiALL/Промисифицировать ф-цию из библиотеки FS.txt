@@ -1,0 +1,16 @@
+Промисифицировать ф-цию из библиотеки FS
+
+
+fs.readFile(filename, (err, data) => {
+    if (err) {
+	console.error(err);
+	}
+	else {
+		console.log(data);
+	}
+});
+
+ */
+ 
+
+fs.readFile(fileName).then(data=>console.log(data)).catch(e=>console.log(e));

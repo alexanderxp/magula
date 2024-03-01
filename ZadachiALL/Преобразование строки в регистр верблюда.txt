@@ -1,0 +1,22 @@
+Преобразование строки в регистр верблюда
+Завершите метод / функцию, чтобы он преобразовывал слова, разделенные тире / подчеркиванием, в верблюжий регистр.
+Первое слово в выводе должно быть с заглавной буквы, только если исходное слово было с заглавной буквы.
+(известный как верхний регистр верблюда, также часто называемый случаем Паскаля). 
+
+Convert string to camel case 
+Complete the method/function so that it converts dash/underscore delimited words into camel casing. 
+The first word within the output should be capitalized only if the original word was capitalized 
+(known as Upper Camel Case, also often referred to as Pascal case).
+
+Examples
+toCamelCase("the-stealth-warrior") // returns "theStealthWarrior"
+toCamelCase("The_Stealth_Warrior") // returns "TheStealthWarrior"
+   */
+
+
+function toCamelCase(s) {
+  return s.split('-').map (
+      function(str){
+         return str = str[0].toUpperCase() + str.slice(1)
+      } ).join('');
+}

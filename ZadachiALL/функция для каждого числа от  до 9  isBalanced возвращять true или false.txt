@@ -1,0 +1,64 @@
+ДОП
+isBalanced('}{')                       // false
+isBalanced('{{}')                      // false
+isBalanced('{}{}')                     // true
+isBalanced('foo { bar { baz } boo }') // true
+isBalanced('foo { bar { baz }')       // false
+isBalanced('foo { bar } }')           // false
+https://www.codewars.com/kata/calculating-with-functions/javascript
+
+На этот раз мы хотим написать вычисления с использованием функций и получить результаты. Давайте посмотрим на некоторые примеры:
+
+JavaScript:
+seven(times(five()));                 // должен вернуть 35
+four(plus(nine()));                   // должен вернуть 13
+eight(minus(three()));                // должен вернуть 5
+six(dividedBy(two()));                // должен вернуть 3
+
+Требования:
+
+Должна быть функция для каждого числа от 0 («ноль») до 9 («девять»)
+Должна быть функция для каждой из следующих математических операций: плюс, минус, время, splitBy (split_by в Ruby)
+Каждый расчет состоит из ровно одной операции и двух чисел
+Самая внешняя функция представляет левый операнд, самая внутренняя функция представляет правый операнд
+Деление должно быть целочисленным делением, например, восемь (divBy (three ())) / восьмерка (shared_by (три)) должны возвращать 2, а не 2.666666 ...
+*/
+
+
+
+
+
+
+
+function isBalanced(expression) {
+  var checkingString = expression;
+  var stack = [];
+ 
+  if (checkingString.length <= 0) return true;
+ 
+  for (var i = 0; i < checkingString.length; i++) {
+    if(checkingString[i] === '{') {
+      stack.push(checkingString[i]);
+    } else if (checkingString[i] === '}') {
+      if (stack.length > 0) {
+        stack.pop();
+      } else {
+        return false;
+      }
+    }
+  }
+ 
+  if (stack.pop()) return false;
+  return true;
+}
+
+
+
+/*    
+isBalanced('}{')                         // false
+isBalanced('{{}')                        // false
+isBalanced('{}{}')                       // true
+isBalanced('foo { bar { baz } boo }')    // true
+isBalanced('foo { bar { baz }')          // false
+isBalanced('foo { bar } }')              // false
+*/

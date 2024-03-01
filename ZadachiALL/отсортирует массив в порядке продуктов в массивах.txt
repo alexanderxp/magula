@@ -1,0 +1,35 @@
+написать ф-цию, которая отсортирует массив в порядке 
+Приоритеты продуктов такие:
+1 READY
+1.1   origin=BANK 
+1.2   origin=CLIENT
+2 IN PROGRESS / IN PROGRESS2
+3 SCORING
+4 REJECTED
+5 NEW
+6 ACTIVE
+let products = [
+    {id: 'overdraft', status: 'ACTIVATED'},
+    {id: 'overdraft', status: 'READY', origin:'CLIENT'},
+    {id: 'creditLine', status: 'READY', origin:'CLIENT'},
+    {id: 'overdraft', status: 'REJECTED'},
+    {id: 'turnover', status: 'ACTIVATED'},
+    {id: 'overdraft', status: 'READY', origin:'BANK'},
+    {id: 'turnover', status: 'NEW'},
+    {id: 'turnover', status: 'IN PROGRESS'},
+    {id: 'creditLine', status: 'ACTIVATED'},
+    {id: 'creditLine', status: 'ACTIVE'},
+    {id: 'turnover', status: 'READY', origin:'BANK'},
+    {id: 'creditLine', status: 'IN PROGRESS2'},
+    {id: 'creditLine', status: 'SCORING'}
+    ];
+*/
+
+
+
+	function sortProducts(arr) {
+		const map = ['READY', 'IN PROGRESS', 'IN PROGRESS2', 'SCORING', 'REJECTED', 'NEW', 'ACTIVATED'];
+			console.log(map.map(status => {
+				return arr.filter(item => item.status === status);
+		}));
+	}

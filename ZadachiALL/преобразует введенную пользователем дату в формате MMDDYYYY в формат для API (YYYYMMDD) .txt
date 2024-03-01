@@ -1,0 +1,25 @@
+Напишите функцию, которая преобразует введенную пользователем дату в формате MM/DD/YYYY 
+в формат, необходимый для API (YYYYMMDD). 
+Параметр «userDate» и возвращаемое значение являются строками.
+
+Например, следует преобразовать введенную пользователем дату 
+«31.12.2014» в «20141231», подходящую для API.
+function formatDate(userDate) {
+ // format from M/D/YYYY to YYYYMMDD
+}
+console.log(formatDate("12/31/2014"));
+*/
+
+
+
+
+function formatDate(userDate) {
+  var datePart = userDate.split('/');
+  (datePart[0].length == 1) && (datePart[0] = '0' + datePart[0]);
+  (datePart[1].length == 1) && (datePart[1] = '0' + datePart[1]);
+  return datePart[2] + datePart[0] + datePart[1];
+}
+
+
+
+// console.log(formatDate("12/31/2014"));   
